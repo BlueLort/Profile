@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Omar Nasr - Home</title>
+	<link href="fonts/roboto condensed/RobotoCondensed-Regular.ttf" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/home.css">
+</head>
+<script src="js/jquery.min.js"></script>
+<body>
+	<div id="profile">
+		<div id="header">
+			<span class="font large-font" id="name">
+				Omar Nasr
+			</span>
+			<span class="font" id="skill">Game | Graphics Developer</span>
+			<a href="https://github.com/BlueLort" target="_blank">
+				<img src="imgs/icons/github.png" class="webIcon">
+			</a>
+			<a href="https://www.youtube.com/channel/UCez3-zG2T2XO23tQUbae8vA?view_as=subscriber" target="_blank">
+				<img src="imgs/icons/youtube.png" class="webIcon">
+			</a>
+			<a href="https://www.linkedin.com/in/Lort/" target="_blank">
+				<img src="imgs/icons/linkedin.png" class="webIcon">
+			</a>
+			<a href="https://a2oj.com/profile?Username=lort" target="_blank">
+				<img src="imgs/icons/a2oj.png" class="webIcon">
+			</a>
+
+		</div>
+		<div id="extraInfo">
+			<span class="font small-font">BlueLort</span>
+		</div>
+		<div>
+			<ul id="menu">
+				<li><a class="active" href="#home">Home</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#live_projects">Live Projects</a></li>
+				<li><a href="#resume">Resume</a></li>
+			</ul>
+		</div>
+		<div id="content">
+
+		</div>
+	</div>
+</body>
+<script>
+	const HOME='content/home.html';
+	const PROJECTS='content/projects.html';
+	const LIVE_PROJECTS='content/liveProjects.html';
+	const RESUME='content/resume.html';
+	$( "#content" ).load(HOME);
+</script>
+</html>

@@ -1,0 +1,95 @@
+body {
+    background-color: rgb(228, 228, 228);
+}
+
+#profile {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 64px;
+}
+
+#header {
+    margin-top: 20px;
+}
+
+#extraInfo {
+    padding-bottom: 8px;
+    border-bottom: 3px solid #a0a0a0;
+    margin-bottom: 7px;
+}
+
+.font {
+    font-family: 'Roboto Condensed', sans-serif, monospace;
+    color: rgb(136, 136, 136);
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.large-font {
+    font-size: 24px
+}
+
+.small-font {
+    font-weight: normal;
+    font-size: 14px;
+}
+
+#skill {
+    padding-left: 64px;
+}
+
+#name {
+    color: rgb(108, 163, 235);
+}
+
+.webIcon {
+    float: right;
+    margin-bottom: -5px;
+    width: 22px;
+    height: 22px;
+    padding: 0px;
+    border: 0px;
+    border-radius: 0px;
+    margin-top: 4px;
+    margin-right: 2px;
+    opacity: 0.7;
+}
+.webIcon:hover {
+    opacity: 1.0;
+}
+
+
+#menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+    overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif, monospace;
+    color: rgb(136, 136, 136);
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+}
+
+#menu li {
+    float: left;
+    margin-right:20px;
+}
+
+#menu li a {
+    display: block;
+    color:rgb(136, 136, 136);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#menu .active {
+    border-bottom: 3px solid rgb(136, 136, 136) ;
+}
+#menu li a:not(.active):hover {
+    border-bottom: 3px solid rgb(25, 25, 25) ;
+}
