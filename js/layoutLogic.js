@@ -5,10 +5,11 @@ const LIVE_PROJECTS='content/liveProjects.html';
 const RESUME='content/resume.html';
 //============================================
 switch(document.location.hash){
-    case "#home":$( "#content" ).load(HOME); break;
-    case "#projects":$( "#content" ).load(PROJECTS); break;
-    case "#live_projects":$( "#content" ).load(LIVE_PROJECTS); break;
-    case "#resume":$( "#content" ).load(RESUME); break;
+    case "#home":fixActice("#menu #HOME",HOME,"Home");break;
+    case "#projects":fixActice("#menu #PROJECTS",PROJECTS,"Projects"); break;
+    case "#live_projects":fixActice("#menu #LIVE_PROJECTS",LIVE_PROJECTS,"Live Projects"); break;
+    case "#resume":fixActice("#menu #RESUME",RESUME,"Resume"); break;
+    default:$("#content").load(HOME);
 }
 
 
