@@ -6,7 +6,6 @@
 	<link href="fonts/roboto condensed/RobotoCondensed-Regular.ttf" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
-<script src="js/jquery.min.js"></script>
 <body>
 	<div id="profile">
 		<div id="header">
@@ -33,10 +32,10 @@
 		</div>
 		<div>
 			<ul id="menu">
-				<li><a class="active" href="#home">Home</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#live_projects">Live Projects</a></li>
-				<li><a href="#resume">Resume</a></li>
+				<li><a class="active" href="#home" id="HOME">Home</a></li>
+				<li><a href="#projects" id="PROJECTS">Projects</a></li>
+				<li><a href="#live_projects" id="LIVE_PROJECTS">Live Projects</a></li>
+				<li><a href="#resume" id="RESUME">Resume</a></li>
 			</ul>
 		</div>
 		<div id="content">
@@ -44,11 +43,7 @@
 		</div>
 	</div>
 </body>
-<script>
-	const HOME='content/home.html';
-	const PROJECTS='content/projects.html';
-	const LIVE_PROJECTS='content/liveProjects.html';
-	const RESUME='content/resume.html';
-	$( "#content" ).load(HOME);
-</script>
+<script src="js/jquery.min.js"></script>
+<script src="js/tweenjs.min.js"></script>
+<script src="js/layoutLogic.js"></script>
 </html>
