@@ -9,6 +9,7 @@ $( "#content" ).load(HOME);
 function fixActice(object,newContentURL,newTitle){
     $(".active").removeAttr("class");
     $(object).addClass("active");
+    console.log(newContentURL);
     document.title = "Omar Nasr - "+newTitle;
     $('#content').animate({ opacity: '0.0'}, { duration: 300, queue: false, complete: function() {
         $("#content").load(newContentURL);
