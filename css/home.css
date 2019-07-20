@@ -36,6 +36,7 @@ body {
     font-size: 14px;
 }
 .paragraphs{
+    color: rgb(66, 66, 66);
     letter-spacing: 0px;
     font-size: 16px;
     font-weight: normal;
@@ -141,4 +142,28 @@ div .video iframe{
     .img_resume:hover {
         opacity: 0.85;
         cursor: pointer; cursor: hand;
+    }
+    .projects{
+        margin-right: auto;
+        margin-left: auto;
+        padding-top: 32px;
+        float: left;
+        padding-bottom: 32px;
+        width: 85%;
+        border-bottom: 2px solid #c8c8c9;
+    }
+    .projects .img_resume{
+        width: 400px;
+        height: 300px;
+    }
+    .projects:nth-of-type(odd) .img_resume{
+        float: right;
+        margin-right: 10px;    
+        margin-left: 30px;
+    }
+    .projects:nth-of-type(even) ol{
+      padding-left:475px;
+    }
+    .technologyUsed{
+        margin-right: 20px;
     }
