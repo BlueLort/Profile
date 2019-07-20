@@ -1,12 +1,14 @@
+html{
+    font-family: 'Roboto Condensed', sans-serif, monospace;
+}
 body {
     background-color: rgb(228, 228, 228);
 }
 
 #profile {
-    width: 1200px;
+    width: 1024px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 64px;
 }
 
 #header {
@@ -20,7 +22,6 @@ body {
 }
 
 .font {
-    font-family: 'Roboto Condensed', sans-serif, monospace;
     color: rgb(136, 136, 136);
     font-size: 18px;
     font-weight: bold;
@@ -45,7 +46,7 @@ body {
 }
 
 #skill {
-    padding-left: 64px;
+    padding-left: 8.5%;
 }
 
 #name {
@@ -54,15 +55,13 @@ body {
 
 .webIcon {
     float: right;
-    margin-bottom: -5px;
-    width: 22px;
-    height: 22px;
-    padding: 0px;
-    border: 0px;
-    border-radius: 0px;
-    margin-top: 4px;
-    margin-right: 2px;
-    opacity: 0.7;
+    width: 24px;
+    height: 24px;
+    padding: 1px;
+    border: 1px solid gray;
+    border-radius:1px;
+    margin-right: 0.25%;
+    opacity: 0.65;
 }
 
 .webIcon:hover {
@@ -74,26 +73,24 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-
     overflow: hidden;
-    font-family: 'Roboto Condensed', sans-serif, monospace;
     color: rgb(136, 136, 136);
     font-size: 14px;
     font-weight: bold;
-    letter-spacing: 2px;
+    letter-spacing: 2.5px;
 
 }
 
 #menu li {
     float: left;
-    margin-right: 20px;
+    margin-right: 5%;
 }
 
 #menu li a {
     display: block;
     color: rgb(136, 136, 136);
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px;
     text-decoration: none;
 }
 
@@ -106,10 +103,9 @@ body {
 }
 
 #content {
-    font-size: 14px;
     margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 60px;
+    margin-left: 1%;
+    margin-right: 1%;
 }
 
 div .video {
@@ -130,15 +126,15 @@ div .video iframe {
 }
 
 #resume {
-    margin-top: 6px;
-    width: 85%;
+    margin-top: 2%;
+    width: 95%;
 }
 
 img.img_resume {
 
-    margin-right: 10px;
+    margin-right: 5%;
     float: left;
-    margin-left: 10px;
+    margin-left: 1%;
     border: 2px solid #c8c8c9;
     box-shadow: 3px 3px 3px rgb(117, 117, 117);
     border-radius: 2px;
@@ -146,50 +142,45 @@ img.img_resume {
 }
 
 .img_resume:hover {
-    opacity: 0.85;
+    opacity: 0.7;
     cursor: pointer;
 }
 
 .projects {
     margin-right: auto;
     margin-left: auto;
-    padding-top: 16px;
+    padding-top: 4%;
     float: left;
-    padding-bottom: 16px;
-    width: 85%;
+    padding-bottom: 2%;
     border-bottom: 2px solid #c8c8c9;
 }
 
-.projects .img_resume {
+.projects img {
     width: 300px;
     height: 250px;
 }
 
-.projects:nth-of-type(odd) .img_resume {
+.projects:nth-of-type(odd) img {
     float: right;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 1%;
+    margin-left: 1%;
 }
 
 .projects:nth-of-type(even) ol {
-    padding-left: 375px;
-}
-
-.technologyUsed {
-    margin-right: 20px;
+    padding-left: 40%;
 }
 
 .slider {
-    width: 50%;
+    width: 25%;
     height: 8px;
-    border-radius: 5px;
+    border-radius: 2px;
     outline: none;
-    margin: 10px;
+    margin: 2%;
 }
 
 .buttons {
-    margin: 10px;
-    padding: 5px;
+    margin: 2%;
+    padding: 1%;
     border-radius: 6px;
     background-color: rgb(231, 231, 231);
     color: black;
@@ -212,11 +203,15 @@ img.img_resume {
     width: 300px;
     height: 250px;
     float: right;
+    margin-right:0px;
     box-shadow: 3px 3px 3px rgb(117, 117, 117);
     border-radius: 2px;
 }
 
 #imageGeneratedCanvas:hover {
-    opacity: 0.85;
+    opacity: 0.7;
     cursor: pointer;
+}
+.slidecontainer{
+    width:964px;
 }
