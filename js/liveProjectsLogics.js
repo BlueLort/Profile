@@ -1,5 +1,4 @@
-var canvas = document.getElementById("imageGeneratedCanvas");
-var ctx = canvas.getContext("2d");
+
 function generateImage(data, width, height) {
     var p = new PNGlib(width, height, 256); // construcor takes height, weight and color-depth
     var background = p.color(0, 0, 0, 0); // set the background transparent
@@ -24,6 +23,8 @@ $("#heighthmap").change(function () {
     $("#" + this.id + "Val").html(this.value);
 });
 $("#generateHMap").click(function () {
+    var canvas = document.getElementById("imageGeneratedCanvas");
+    var ctx = canvas.getContext("2d");
     var width = parseInt($("#widthhmapVal").text());
     var height = parseInt($("#heighthmapVal").text());
     var roughness = parseFloat($("#roughnessVal").text());
@@ -58,21 +59,6 @@ $("#generateHMap").click(function () {
     image.src = "data:image/png;base64," + imgBase64;
     $("#imgLink").attr("href", 'data:application/octet-stream;base64,' + imgBase64);
 });
-
-//start with white canvas
-var p = new PNGlib(400, 400, 256); // construcor takes height, weight and color-depth
-var background = p.color(0, 0, 0, 0); // set the background transparent
-for (var i = 0; i < 400; i++) {
-    for (var j = 0; j < 400; j++) {
-        p.buffer[p.index(j, i)] = p.color(0xff, 0xff, 0xff);
-    }
-}
-var image = new Image();
-image.onload = function () {
-    ctx.drawImage(image, 0, 0);
-};
-image.src = "data:image/png;base64," + p.getBase64();
-$("#imgLink").attr("href", 'data:application/octet-stream;base64,' + p.getBase64());
 
 
 
