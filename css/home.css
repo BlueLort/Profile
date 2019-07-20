@@ -3,7 +3,7 @@ body {
 }
 
 #profile {
-    width: 900px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding-bottom: 64px;
@@ -130,7 +130,7 @@ div .video iframe{
     
     img.img_resume {
         
-        margin-right: 30px;    
+        margin-right: 10px;    
         float: left;
         margin-left: 10px;
         border: 2px solid #c8c8c9;
@@ -146,23 +146,23 @@ div .video iframe{
     .projects{
         margin-right: auto;
         margin-left: auto;
-        padding-top: 32px;
+        padding-top: 16px;
         float: left;
-        padding-bottom: 32px;
+        padding-bottom: 16px;
         width: 85%;
         border-bottom: 2px solid #c8c8c9;
     }
     .projects .img_resume{
-        width: 400px;
-        height: 300px;
+        width: 300px;
+        height: 250px;
     }
     .projects:nth-of-type(odd) .img_resume{
         float: right;
         margin-right: 10px;    
-        margin-left: 30px;
+        margin-left: 10px;
     }
     .projects:nth-of-type(even) ol{
-      padding-left:475px;
+      padding-left:375px;
     }
     .technologyUsed{
         margin-right: 20px;
