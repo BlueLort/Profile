@@ -35,12 +35,13 @@ body {
     font-weight: normal;
     font-size: 14px;
 }
-.paragraphs{
+
+.paragraphs {
     color: rgb(66, 66, 66);
     letter-spacing: 0px;
     font-size: 16px;
     font-weight: normal;
-    
+
 }
 
 #skill {
@@ -63,6 +64,7 @@ body {
     margin-right: 2px;
     opacity: 0.7;
 }
+
 .webIcon:hover {
     opacity: 1.0;
 }
@@ -72,7 +74,7 @@ body {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    
+
     overflow: hidden;
     font-family: 'Roboto Condensed', sans-serif, monospace;
     color: rgb(136, 136, 136);
@@ -84,31 +86,33 @@ body {
 
 #menu li {
     float: left;
-    margin-right:20px;
+    margin-right: 20px;
 }
 
 #menu li a {
     display: block;
-    color:rgb(136, 136, 136);
+    color: rgb(136, 136, 136);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
+
 #menu .active {
-    border-bottom: 3px solid rgb(136, 136, 136) ;
-}
-#menu li a:not(.active):hover {
-    border-bottom: 3px solid rgb(25, 25, 25) ;
+    border-bottom: 3px solid rgb(136, 136, 136);
 }
 
-#content{
+#menu li a:not(.active):hover {
+    border-bottom: 3px solid rgb(25, 25, 25);
+}
+
+#content {
     font-size: 14px;
     margin-top: 30px;
     margin-left: 30px;
     margin-right: 60px;
 }
 
-div .video  {
+div .video {
     width: 670px;
     height: 400px;
     background-color: rgb(0, 0, 0);
@@ -119,51 +123,100 @@ div .video  {
     box-shadow: 5px 5px 5px rgb(117, 117, 117);
     margin-bottom: 64px;
 }
-div .video iframe{
+
+div .video iframe {
     width: 100%;
     height: 100%;
 }
-    #resume {
-        margin-top: 6px;
-        width: 85%;
-    }
-    
-    img.img_resume {
-        
-        margin-right: 10px;    
-        float: left;
-        margin-left: 10px;
-        border: 2px solid #c8c8c9;
-        box-shadow: 3px 3px 3px rgb(117, 117, 117);
-        border-radius: 2px;
-        width: 25%;
-    }
-    
-    .img_resume:hover {
-        opacity: 0.85;
-        cursor: pointer; cursor: hand;
-    }
-    .projects{
-        margin-right: auto;
-        margin-left: auto;
-        padding-top: 16px;
-        float: left;
-        padding-bottom: 16px;
-        width: 85%;
-        border-bottom: 2px solid #c8c8c9;
-    }
-    .projects .img_resume{
-        width: 300px;
-        height: 250px;
-    }
-    .projects:nth-of-type(odd) .img_resume{
-        float: right;
-        margin-right: 10px;    
-        margin-left: 10px;
-    }
-    .projects:nth-of-type(even) ol{
-      padding-left:375px;
-    }
-    .technologyUsed{
-        margin-right: 20px;
-    }
+
+#resume {
+    margin-top: 6px;
+    width: 85%;
+}
+
+img.img_resume {
+
+    margin-right: 10px;
+    float: left;
+    margin-left: 10px;
+    border: 2px solid #c8c8c9;
+    box-shadow: 3px 3px 3px rgb(117, 117, 117);
+    border-radius: 2px;
+    width: 25%;
+}
+
+.img_resume:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}
+
+.projects {
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 16px;
+    float: left;
+    padding-bottom: 16px;
+    width: 85%;
+    border-bottom: 2px solid #c8c8c9;
+}
+
+.projects .img_resume {
+    width: 300px;
+    height: 250px;
+}
+
+.projects:nth-of-type(odd) .img_resume {
+    float: right;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.projects:nth-of-type(even) ol {
+    padding-left: 375px;
+}
+
+.technologyUsed {
+    margin-right: 20px;
+}
+
+.slider {
+    width: 50%;
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+    margin: 10px;
+}
+
+.buttons {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 6px;
+    background-color: rgb(231, 231, 231);
+    color: black;
+    border: 2px solid rgb(175, 175, 175);
+    font-size: 16px;
+}
+
+.buttons:hover {
+    background-color: rgb(138, 138, 138);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+.buttons:active {
+    background-color: rgb(39, 39, 39);
+    color: white;
+}
+
+#imageGeneratedCanvas {
+    width: 300px;
+    height: 250px;
+    float: right;
+    box-shadow: 3px 3px 3px rgb(117, 117, 117);
+    border-radius: 2px;
+}
+
+#imageGeneratedCanvas:hover {
+    opacity: 0.85;
+    cursor: pointer;
+}

@@ -1,0 +1,30 @@
+<div class="projects" id="#hmapGenerator">
+    <h1 class="font" style="color: rgb(108, 163, 235);font-size: 24px;">Height Map Generator</h1>
+
+    <div class="slidecontainer">
+        <a id="imgLink" download="heightMap.png" href="#live_projects" type="_blank">
+            <canvas id="imageGeneratedCanvas"></canvas>
+        </a>
+        <label for="width" class="font">Width &nbsp; &nbsp; &nbsp; &nbsp;</label>
+        <input name="width" type="range" min="0" max="1024" value="512" class="slider" id="widthhmap">
+        <label for="width" id="widthhmapVal" class="font" style="margin: 10px">512</label>
+        <br>
+        <label for="height" class="font">Height &nbsp; &nbsp; &nbsp;&nbsp;</label>
+        <input name="height" type="range" min="0" max="1024" value="512" class="slider" id="heighthmap">
+        <label id="heighthmapVal" class="font" style="margin: 10px">512</label>
+        <br>
+        <label for="roughness" class="font">Roughness</label>
+        <input name="roughness" type="range" min="0" max="200" value="40" class="slider" id="roughness">
+        <label id="roughnessVal" class="font" style="margin: 10px">0.4</label>
+        <br>
+        <label for="octaves" class="font">Octaves &nbsp; &nbsp;&nbsp;</label>
+        <input name="octaves" type="range" min="1" max="10" value="5" class="slider" id="octaves">
+        <label id="octavesVal" class="font" style="margin: 10px">5</label>
+        <br>
+        <button id="generateHMap" type="button" class="font small-font buttons" value="Generate">Generate Height
+            Map</button>
+
+
+    </div>
+
+</div>
