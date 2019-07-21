@@ -60,14 +60,14 @@
         }
         var worldWidth = 256, worldDepth = 256, worldHalfWidth = worldWidth / 2, worldHalfDepth = worldDepth / 2;
         var data = generateHeight(worldWidth, worldDepth);
-        camera.position.y = data[worldHalfWidth + worldHalfDepth * worldWidth] * 10 +400;
+        camera.position.y = data[worldHalfWidth + worldHalfDepth * worldWidth] * 10 + 400;
         var geometry = new THREE.PlaneBufferGeometry(7500, 7500, worldWidth - 1, worldDepth - 1);
         geometry.rotateX(- Math.PI / 2);
         var vertices = geometry.attributes.position.array;
         for (var i = 0, j = 0, l = vertices.length; i < l; i++ , j += 3) {
-            vertices[j + 1] = data[i]*10 ;
+            vertices[j + 1] = data[i] * 10;
         }
-        var mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xf5f5f5,wireframe: true }));
+        var mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xf5f5f5, wireframe: true }));
         scene.add(mesh);
 
         //========================================
@@ -75,7 +75,7 @@
         var animate = function () {
             requestAnimationFrame(animate);
             //const delta = clock.getDelta();
-            camera.position.z-=0.25;
+            camera.position.z -= 0.25;
             renderer.render(scene, camera);
         };
 

@@ -71,4 +71,3 @@ var ImprovedNoise = function () {
 
 };
 
-//export { ImprovedNoise };
