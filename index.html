@@ -1,92 +1,179 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Omar Nasr - Home</title>
-	<link href="fonts/roboto condensed/RobotoCondensed-Regular.ttf" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset=utf-8>
+    <title>Omar Nasr - Home</title>
+    <link href="fonts/roboto condensed/RobotoCondensed-Regular.ttf" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <style>
+        canvas {
+            width: 100%;
+            height: 100%
+        }
+    </style>
 </head>
+
 <body>
-	<div id="profile">
-		<div id="header">
-			<span class="font large-font" id="name">
-				Omar Nasr
-			</span>
-			<span class="font" id="skill">Game | Graphics Developer</span>
-			<a href="https://github.com/BlueLort" target="_blank">
-				<img src="imgs/icons/github.png" class="webIcon">
-			</a>
-			<a href="https://www.youtube.com/channel/UCez3-zG2T2XO23tQUbae8vA?view_as=subscriber" target="_blank">
-				<img src="imgs/icons/youtube.png" class="webIcon">
-			</a>
-			<a href="https://www.linkedin.com/in/Lort/" target="_blank">
-				<img src="imgs/icons/linkedin.png" class="webIcon">
-			</a>
-			<a href="https://a2oj.com/profile?Username=lort" target="_blank">
-				<img src="imgs/icons/a2oj.png" class="webIcon">
-			</a>
 
-		</div>
-		<div id="extraInfo">
-			<span class="font small-font">BlueLort</span>
-		</div>
-		<div>
-			<ul id="menu">
-				<li><a class="active" href="#home" id="HOME">Home</a></li>
-				<li><a href="#projects" id="PROJECTS">Projects</a></li>
-				<li><a href="#live_projects" id="LIVE_PROJECTS">Live Projects</a></li>
-				<li><a href="#resume" id="RESUME">Resume</a></li>
-			</ul>
-		</div>
-		<div id="content">
+    <script src="js/three.min.js"></script>
+    <script src="js/ImprovedNoise.js"></script>
+    <script type="module">
+        //========================================
+        //Scene init
+        //========================================
+        var scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xe4e4e4);
+        //========================================
+        //Camera init
+        //========================================
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1024);
+        camera.position.set(0, 0, 10);
+        camera.lookAt(0, 0, 0);
+        scene.add(camera);
+        //========================================
+        //Renderer init
+        //========================================
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        //========================================
+        //Geometry
+        //========================================
+        //some plane generation used perlin improved noise algorithm
+        //a bit faster and result in far better results than my algorithm in live projects.
+        //also most of geo generation code is copied from examples of threejs.
+        //saving time than writing it my self and adapting it to my noise algorithm which could lead to more bugs to resolve.
+        //this is a profile and no need to add complex work.
+        function generateHeight(width, height) {
+            var size = width * height, data = new Uint8Array(size),
+                perlin = new ImprovedNoise(), quality = 1, z = Math.random() * 100;
+            for (var j = 0; j < 4; j++) {
+                for (var i = 0; i < size; i++) {
+                    var x = i % width, y = ~ ~(i / width);
+                    data[i] += Math.abs(perlin.noise(x / quality, y / quality, z) * quality * 1.75);
+                }
+                quality *= 3.5;
+            }
+            return data;
+        }
+        var worldWidth = 256, worldDepth = 256, worldHalfWidth = worldWidth / 2, worldHalfDepth = worldDepth / 2;
+        var data = generateHeight(worldWidth, worldDepth);
+        camera.position.y = data[worldHalfWidth + worldHalfDepth * worldWidth] * 10 +400;
+        var geometry = new THREE.PlaneBufferGeometry(7500, 7500, worldWidth - 1, worldDepth - 1);
+        geometry.rotateX(- Math.PI / 2);
+        var vertices = geometry.attributes.position.array;
+        for (var i = 0, j = 0, l = vertices.length; i < l; i++ , j += 3) {
+            vertices[j + 1] = data[i]*10 ;
+        }
+        var mesh = new THREE.Mesh(geometry, new THREE.MeshBasicMaterial({ color: 0xf5f5f5,wireframe: true }));
+        scene.add(mesh);
 
-		</div>
-	</div>
+        //========================================
+
+        var animate = function () {
+            requestAnimationFrame(animate);
+            //const delta = clock.getDelta();
+            camera.position.z-=0.25;
+            renderer.render(scene, camera);
+        };
+
+        animate();
+        window.addEventListener('resize', onWindowResize, false);
+        function onWindowResize() {
+            var width = window.innerWidth;
+            var height = window.innerHeight;
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(width, height);
+        }
+    </script>
+
+    <div id="profile">
+        <div id="header">
+            <span class="font large-font" id="name">
+                Omar Nasr
+            </span>
+            <span class="font" id="skill">Game | Graphics Developer</span>
+            <a href="https://github.com/BlueLort" target="_blank">
+                <img src="imgs/icons/github.png" class="webIcon">
+            </a>
+            <a href="https://www.youtube.com/channel/UCez3-zG2T2XO23tQUbae8vA?view_as=subscriber" target="_blank">
+                <img src="imgs/icons/youtube.png" class="webIcon">
+            </a>
+            <a href="https://www.linkedin.com/in/Lort/" target="_blank">
+                <img src="imgs/icons/linkedin.png" class="webIcon">
+            </a>
+            <a href="https://a2oj.com/profile?Username=lort" target="_blank">
+                <img src="imgs/icons/a2oj.png" class="webIcon">
+            </a>
+
+        </div>
+        <div id="extraInfo">
+            <span class="font small-font">BlueLort</span>
+        </div>
+        <div>
+            <ul id="menu">
+                <li><a class="active" href="#home" id="HOME">Home</a></li>
+                <li><a href="#projects" id="PROJECTS">Projects</a></li>
+                <li><a href="#live_projects" id="LIVE_PROJECTS">Live Projects</a></li>
+                <li><a href="#resume" id="RESUME">Resume</a></li>
+            </ul>
+        </div>
+        <div id="content">
+
+        </div>
+    </div>
+
 </body>
 <script src="js/jquery.min.js"></script>
 <script>
-//============URLS===========================
-const HOME='content/home.html';
-const PROJECTS='content/projects.html';
-const LIVE_PROJECTS='content/liveProjects.html';
-const RESUME='content/resume.html';
-//============================================
-switch(document.location.hash){
-    case "#home":fixActice("#menu #HOME",HOME,"Home");break;
-    case "#projects":fixActice("#menu #PROJECTS",PROJECTS,"Projects"); break;
-    case "#live_projects":fixActice("#menu #LIVE_PROJECTS",LIVE_PROJECTS,"Live Projects"); break;
-    case "#resume":fixActice("#menu #RESUME",RESUME,"Resume"); break;
-    default:$("#content").load(HOME);
-}
+    //============URLS===========================
+    const HOME = 'content/home.html';
+    const PROJECTS = 'content/projects.html';
+    const LIVE_PROJECTS = 'content/liveProjects.html';
+    const RESUME = 'content/resume.html';
+    //============================================
+    switch (document.location.hash) {
+        case "#home": fixActice("#menu #HOME", HOME, "Home"); break;
+        case "#projects": fixActice("#menu #PROJECTS", PROJECTS, "Projects"); break;
+        case "#live_projects": fixActice("#menu #LIVE_PROJECTS", LIVE_PROJECTS, "Live Projects"); break;
+        case "#resume": fixActice("#menu #RESUME", RESUME, "Resume"); break;
+        default: $("#content").load(HOME);
+    }
 
 
-function fixActice(object,newContentURL,newTitle){
-    $(".active").removeAttr("class");
-    $(object).addClass("active");
-    document.title = "Omar Nasr - "+newTitle;
-    $('#content').animate({ opacity: '0.0'}, { duration: 300, queue: false, complete: function() {
-        $("#content").load(newContentURL);
-        $('#content').animate({ opacity: '1.0'}, { duration: 300, queue: false});
-    }}
-    );
-}
-$("#menu #HOME").click(function(event){
-    if($(".active").attr("id")=="HOME")return;
-    fixActice(this,HOME,"Home");
-})
-$("#menu #PROJECTS").click(function(event){
-    if($(".active").attr("id")=="PROJECTS")return;
-    fixActice(this,PROJECTS,"Projects");
-})
-$("#menu #LIVE_PROJECTS").click(function(event){
-    if($(".active").attr("id")=="LIVE_PROJECTS")return;
-    fixActice(this,LIVE_PROJECTS,"Live Projects");
-})
-$("#menu #RESUME").click(function(event){
-    if($(".active").attr("id")=="RESUME")return;
-    fixActice(this,RESUME,"Resume");
-})
+    function fixActice(object, newContentURL, newTitle) {
+        $(".active").removeAttr("class");
+        $(object).addClass("active");
+        document.title = "Omar Nasr - " + newTitle;
+        $('#content').animate({ opacity: '0.0' }, {
+            duration: 300, queue: false, complete: function () {
+                $("#content").load(newContentURL);
+                $('#content').animate({ opacity: '1.0' }, { duration: 300, queue: false });
+            }
+        }
+        );
+    }
+    $("#menu #HOME").click(function (event) {
+        if ($(".active").attr("id") == "HOME") return;
+        fixActice(this, HOME, "Home");
+    })
+    $("#menu #PROJECTS").click(function (event) {
+        if ($(".active").attr("id") == "PROJECTS") return;
+        fixActice(this, PROJECTS, "Projects");
+    })
+    $("#menu #LIVE_PROJECTS").click(function (event) {
+        if ($(".active").attr("id") == "LIVE_PROJECTS") return;
+        fixActice(this, LIVE_PROJECTS, "Live Projects");
+    })
+    $("#menu #RESUME").click(function (event) {
+        if ($(".active").attr("id") == "RESUME") return;
+        fixActice(this, RESUME, "Resume");
+    })
 </script>
 <script src="js/PNGlib.js"></script>
 <script src="js/hmapGenerator.js"></script>
+
 </html>
