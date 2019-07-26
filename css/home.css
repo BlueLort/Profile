@@ -159,8 +159,8 @@ img.img_resume {
 }
 
 .projects img {
-    width: 300px;
-    height: 250px;
+    width: 30%;
+    height: 25%;
 }
 .projects img:hover{
     opacity:0.7;
