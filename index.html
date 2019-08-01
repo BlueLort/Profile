@@ -42,9 +42,7 @@
         //========================================
         //some plane generation used perlin improved noise algorithm
         //a bit faster and result in far better results than my algorithm in live projects.
-        //also most of geo generation code is copied from examples of threejs.
-        //saving time than writing it my self and adapting it to my noise algorithm which could lead to more bugs to resolve.
-        //this is a profile and no need to add complex work.
+        //also most of geo generation code is copied from examples of threejs. with little tweaks.
         function generateHeight(width, height) {
             var size = width * height, data = new Uint8Array(size),
                 perlin = new ImprovedNoise(), quality = 1, z = Math.random() * 100;

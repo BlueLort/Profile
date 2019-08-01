@@ -162,6 +162,9 @@ img.img_resume {
 .projects img {
     width: 300px;
     height: 250px;
+      border: 2px solid #c8c8c9;
+    box-shadow: 3px 3px 3px rgb(117, 117, 117);
+    border-radius: 2px;
 }
 .projects img:hover{
     opacity:0.7;
